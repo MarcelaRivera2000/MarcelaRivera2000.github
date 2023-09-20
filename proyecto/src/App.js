@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
+import {Routes,Route,} from "react-router-dom";
 import './App.css';
-import {Navbar, Nav, Button} from 'react-bootstrap';
-import NavbarC from "./componentes/Navbar/NavbarC.js"
-import Carrousel from "./componentes/Carrusel/Carrusel.js"
+import Navbar from "./componentes/Navbar/NavbarC"
+import Paginaprincipal from "./Pages/PaginaPrincipal/Paginaprincipal";
+import Catalogo from './Pages/catalogo/Catalogo'; 
 
 function App() {
+
   return (
-    <div className="App">
-      <NavbarC/>
-      <Carrousel/>
-      <div className="fondo">
-        <br/>
-        <h1>hola</h1>
-      </div>
-    </div>
+    <>
+      <Navbar/>
+      <Routes>
+        <Route path="/proyecto" exact element={<Paginaprincipal/>}/>
+        <Route path="/catalogo" element={<Catalogo/>}/>
+      </Routes>
+    </>
   );
 }
 

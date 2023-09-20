@@ -1,19 +1,18 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from "../../img/logo.jpg"
-import "./NavbarC.css"
+import "./Navbar.css"
 
-function ColorSchemesExample() {
+function Navbarr() {
+
   return (
     <>
       <Navbar bg="light" data-bs-theme="light">
         <Container>
-          <Navbar.Brand href="#home"><img src={logo} alt="" className='logo'/></Navbar.Brand>
+          <Navbar.Brand href="/"><img src={logo} alt="" className='logo'/></Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Página Principal</Nav.Link>
-            <Nav.Link href="#features">Catálogo</Nav.Link>
-            <Nav.Link href="#pricing">Contáctanos</Nav.Link>
+            <Nav.Link as={Link} to="/proyecto">Página Principal</Nav.Link>
+            <Nav.Link as={Link} to="/catalogo">Catálogo</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -21,4 +20,4 @@ function ColorSchemesExample() {
   );
 }
 
-export default ColorSchemesExample;
+export default Navbarr;
